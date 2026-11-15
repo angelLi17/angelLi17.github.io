@@ -1,5 +1,7 @@
 /* Home: text on the left, hypercube on the right; stacks on narrow screens. */
 .hero {
+  /* Centered vertically between the header and footer. */
+  margin: auto 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
   align-items: center;

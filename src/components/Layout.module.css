@@ -52,6 +52,9 @@
 .content {
   flex: 1;
   width: 100%;
+  /* Column flex so a page can center itself vertically with margin: auto 0. */
+  display: flex;
+  flex-direction: column;
   padding-top: 19px;
   padding-bottom: 24px;
   animation: fadeIn 0.3s ease both;
