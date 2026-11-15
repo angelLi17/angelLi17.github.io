@@ -3,15 +3,12 @@ import styles from './Page.module.css'
 
 export default function Home() {
   return (
-    <>
+    <div className={styles.hero}>
       <div className={styles.prose}>
         <p>
           Hi, I'm Angel! I'm a student at UC Berkeley studying Electrical Engineering and Computer
           Science.
         </p>
-      </div>
-      <Hypercube />
-      <div className={styles.prose}>
         <p>
           Most of my work lives where computer vision meets the real world: I do research on grape
           disease detection at Santa Clara University's EPIC Lab, and I'm currently building an OCR
@@ -40,6 +37,7 @@ export default function Home() {
           </a>
         </p>
       </div>
-    </>
+      <Hypercube />
+    </div>
   )
 }

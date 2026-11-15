@@ -1,3 +1,18 @@
+/* Home: text on the left, hypercube on the right; stacks on narrow screens. */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  align-items: center;
+  gap: 40px;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 /* Project list on /portfolio */
 .projects {
   list-style: none;
