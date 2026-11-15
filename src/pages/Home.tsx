@@ -4,8 +4,7 @@ import styles from './Page.module.css'
 export default function Home() {
   return (
     <>
-      <Hypercube />
-      <div className={`${styles.prose} ${styles.intro}`}>
+      <div className={styles.prose}>
         <p>
           Hi, I'm Angel! I'm a student at UC Berkeley studying Electrical Engineering and Computer
           Science.
@@ -26,6 +25,9 @@ export default function Home() {
           Off the clock: library-hopping around Berkeley, sudoku, graphic design, grocery shopping
           and rollerblading. I speak English and Mandarin.
         </p> */}
+      </div>
+      <Hypercube />
+      <div className={styles.prose}>
         <p>
           Say hi: <a href="mailto:angel_li@berkeley.edu">angel_li@berkeley.edu</a>
           {' · '}
