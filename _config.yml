@@ -1,7 +1,7 @@
 title: angel li
 description: EECS @ UC Berkeley. Computer vision, teaching, and things I'm building.
 url: "https://angelli17.github.io"
-baseurl: "/personalwebsite"
+baseurl: ""
 timezone: America/Los_Angeles
 
 theme: minima

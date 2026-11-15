@@ -1,4 +1,4 @@
-# personalwebsite
+# angelLi17.github.io
 
 My personal site: plain Jekyll with the Minima theme, built and deployed by GitHub Pages.
 Push to `main` and it goes live, no build step on your machine.
@@ -34,7 +34,7 @@ Needs Ruby 3.x (e.g. `brew install ruby`):
 
 ```sh
 bundle install
-bundle exec jekyll serve   # http://localhost:4000/personalwebsite/
+bundle exec jekyll serve   # http://localhost:4000/
 ```
 
 ## History
