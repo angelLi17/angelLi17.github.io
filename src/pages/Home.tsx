@@ -8,7 +8,10 @@ export default function Home() {
       <div className={`${styles.prose} ${styles.intro}`}>
         <p>
           Hi, I'm Angel! I'm a student at UC Berkeley studying Electrical Engineering and Computer
-          Science. Most of my work lives where computer vision meets the real world: I do research on grape
+          Science.
+        </p>
+        <p>
+          Most of my work lives where computer vision meets the real world: I do research on grape
           disease detection at Santa Clara University's EPIC Lab, and I'm currently building an OCR
           workflow to translate Assyrian cuneiform. I also like to teach, so on campus I'm a
           teaching intern for CS61A, lecture for CubStart iOS, and help organize Cal Hacks with
