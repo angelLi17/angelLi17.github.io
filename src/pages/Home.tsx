@@ -9,6 +9,9 @@ export default function Home() {
           Hi, I'm Angel! I'm a student at UC Berkeley studying Electrical Engineering and Computer
           Science.
         </p>
+      </div>
+      <Hypercube />
+      <div className={styles.prose}>
         <p>
           Most of my work lives where computer vision meets the real world: I do research on grape
           disease detection at Santa Clara University's EPIC Lab, and I'm currently building an OCR
@@ -25,9 +28,6 @@ export default function Home() {
           Off the clock: library-hopping around Berkeley, sudoku, graphic design, grocery shopping
           and rollerblading. I speak English and Mandarin.
         </p> */}
-      </div>
-      <Hypercube />
-      <div className={styles.prose}>
         <p>
           Say hi: <a href="mailto:angel_li@berkeley.edu">angel_li@berkeley.edu</a>
           {' · '}
