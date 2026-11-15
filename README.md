@@ -2,6 +2,10 @@
 
 My personal site — React + TypeScript + Vite, deployed to GitHub Pages.
 
+## Future edits
+- change colors some are too faded needa be darker
+- change background to cream color with small minimalistic drawing
+
 ## Run locally
 
 ```sh
@@ -21,9 +25,10 @@ Files starting with `_` are ignored.
 
 ## Edit portfolio projects
 
-Projects (and the photostrips) come from `src/content/projects.ts`.
-Add a photo by dropping it in `public/projects/` and setting `image: '/projects/<file>'`.
+Projects come from `src/content/projects.ts`; list order is display order.
 
-## Background
+## Theme
 
-`public/images/beach-bg.jpg` — temporary art by seisyun bot (credited in the footer).
+A Minima-style look (white page, system fonts, one centered column). The rotating
+hypercube on the home page is `src/components/Hypercube.tsx`. The previous beach
+design is saved at the `beach-theme` tag.

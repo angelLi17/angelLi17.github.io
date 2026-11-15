@@ -14,7 +14,6 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="portfolio" element={<Portfolio />} />
-        <Route path="portfolio/:projectId" element={<Portfolio />} />
         <Route path="blog" element={<Blog />} />
         <Route path="blog/:slug" element={<BlogPost />} />
         <Route path="*" element={<NotFound />} />

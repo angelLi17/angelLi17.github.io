@@ -1,9 +1,0 @@
-.title {
-  margin: 0;
-  font-family: var(--font-title);
-  font-weight: 500;
-  font-size: clamp(52px, 6.5vw, 70px);
-  line-height: 1.2;
-  letter-spacing: 0.5px;
-  color: var(--color-title);
-}

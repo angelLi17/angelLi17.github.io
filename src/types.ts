@@ -2,6 +2,8 @@ export interface Post {
   slug: string
   title: string
   date: Date
+  /** Optional "edited: YYYY-MM-DD" frontmatter. */
+  edited?: Date
   summary: string
   draft: boolean
   body: string
@@ -14,17 +16,11 @@ export interface ProjectLink {
 
 export interface Project {
   id: string
-  /** Short handwritten label under the photostrip frame. */
-  caption: string
   title: string
   role: string
   dates: string
   tags: string[]
-  /** Each entry renders as its own paragraph. */
+  /** Sentences joined into one paragraph on the portfolio page. */
   description: string[]
   links?: ProjectLink[]
-  /** Path under public/, e.g. "/projects/grapesense.jpg". Blank frame if omitted. */
-  image?: string
-  /** Which photostrip the project appears on. */
-  strip: 'left' | 'right'
 }

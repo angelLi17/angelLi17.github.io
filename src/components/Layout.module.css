@@ -1,46 +1,92 @@
 .shell {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   min-height: 100dvh;
 }
 
-/* Fixed so the beach stays put while long pages scroll over it. */
-.background {
-  position: fixed;
-  inset: 0;
-  background-size: cover;
-  /* Keeps the sitting figure just left of the photostrips on wide screens. */
-  background-position: center 56%;
-  background-repeat: no-repeat;
+/* Minima's signature: thick dark rule on top, hairline below. */
+.header {
+  border-top: 5px solid var(--color-heading);
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* Mint wash on the left so nav text stays readable over the art. */
-.wash {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(232, 242, 234, 0.55) 0%,
-    rgba(232, 242, 234, 0.2) 45%,
-    rgba(232, 242, 234, 0) 70%
-  );
+.headerInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px 20px;
+  min-height: 56px;
+}
+
+.title,
+.title:visited {
+  font-size: 26px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  line-height: 56px;
+  color: var(--color-heading);
+}
+
+.title:hover {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a,
+.nav a:visited {
+  color: var(--color-text);
+  line-height: 56px;
+}
+
+.nav a.active {
+  color: var(--color-muted);
 }
 
 .content {
-  position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;
-  animation: fadeIn 0.5s ease both;
+  flex: 1;
+  width: 100%;
+  padding-top: 19px;
+  padding-bottom: 24px;
+  animation: fadeIn 0.3s ease both;
 }
 
-.credit {
-  position: fixed;
-  left: var(--gutter);
-  bottom: 10px;
-  font-family: var(--font-caption);
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.85);
-  pointer-events: none;
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding: 18px 0;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footerName {
+  color: var(--color-text);
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px 40px;
+}
+
+.footerRight {
+  max-width: 360px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.footer .lastEdited {
+  margin-top: 6px;
+  font-size: 13px;
 }
 
 @keyframes fadeIn {
@@ -55,15 +101,22 @@
   }
 }
 
-@media (max-width: 1000px) {
-  .background {
-    background-position: 65% 60%;
+@media (max-width: 600px) {
+  .headerInner {
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
-  .credit {
-    position: static;
-    display: block;
-    padding: 24px var(--gutter) 12px;
-    color: var(--color-muted);
+  .title,
+  .nav a {
+    line-height: 1.6;
+  }
+
+  .footerInner {
+    flex-direction: column;
+  }
+
+  .footerRight {
+    text-align: left;
   }
 }

@@ -22,10 +22,14 @@ function parseFrontmatter(raw: string): { data: Record<string, string>; body: st
   return { data, body: match[2].trim() }
 }
 
-/** Parse "YYYY-MM-DD" as a local date so it never shifts a day in US timezones. */
-function parseDate(value: string): Date {
-  const [y, m, d] = value.split('-').map(Number)
-  return new Date(y, (m ?? 1) - 1, d ?? 1)
+/**
+ * Parse a leading "YYYY-MM-DD" as a local date so it never shifts a day in US timezones.
+ * Anything after the date is ignored; an unreadable value gives undefined instead of an Invalid Date.
+ */
+function parseDate(value: string | undefined): Date | undefined {
+  const match = value?.match(/^(\d{4})-(\d{2})-(\d{2})/)
+  if (!match) return undefined
+  return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]))
 }
 
 function toPost(path: string, raw: string): Post {
@@ -35,7 +39,8 @@ function toPost(path: string, raw: string): Post {
   return {
     slug: filename.replace(/^\d{4}-\d{2}-\d{2}-/, ''),
     title: data.title ?? filename,
-    date: parseDate(data.date ?? datePrefix ?? '1970-01-01'),
+    date: parseDate(data.date) ?? parseDate(datePrefix) ?? new Date(1970, 0, 1),
+    edited: parseDate(data.edited),
     summary: data.summary ?? '',
     draft: data.draft === 'true',
     body,
