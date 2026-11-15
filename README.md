@@ -1,34 +1,43 @@
 # personalwebsite
 
-My personal site — React + TypeScript + Vite, deployed to GitHub Pages.
+My personal site: plain Jekyll with the Minima theme, built and deployed by GitHub Pages.
+Push to `main` and it goes live, no build step on your machine.
 
 ## Future edits
 - change colors some are too faded needa be darker
 - change background to cream color with small minimalistic drawing
 
-## Run locally
+## What's where
 
-```sh
-npm install
-npm run dev      # http://localhost:5173/personalwebsite/
-```
+| File | What it is |
+|---|---|
+| `_config.yml` | site title, tagline, nav links |
+| `index.html` | home page text + hypercube |
+| `portfolio.md` | projects, plain Markdown |
+| `blog.html` | list of posts |
+| `_posts/` | blog posts |
+| `_drafts/post-template.md` | starter for a new post |
+| `_includes/footer.html` | footer (name, last edited, tagline) |
+| `_layouts/post.html` | post page (adds the optional "edited" date) |
+| `assets/main.scss` | style tweaks on top of Minima |
+| `assets/js/hypercube.js` | the rotating hypercube |
 
 ## Write a blog post
 
-1. Copy `src/content/posts/_template.md` to `src/content/posts/YYYY-MM-DD-short-title.md`.
-2. Fill in the frontmatter (`title`, `date`, `summary`) and write the post in Markdown.
-3. Put any images in `public/blog/` and reference them as `![alt](/blog/photo.jpg)`.
-4. Commit and push to `main` — GitHub Actions rebuilds and deploys the site.
+1. Copy `_drafts/post-template.md` to `_posts/YYYY-MM-DD-short-title.md`.
+2. Fill in `title` and `summary`, and write the post in Markdown.
+3. Commit and push to `main`.
 
-Set `draft: true` to keep a post off the live site (drafts still show in `npm run dev`).
-Files starting with `_` are ignored.
+## Preview locally (optional)
 
-## Edit portfolio projects
+Needs Ruby 3.x (e.g. `brew install ruby`):
 
-Projects come from `src/content/projects.ts`; list order is display order.
+```sh
+bundle install
+bundle exec jekyll serve   # http://localhost:4000/personalwebsite/
+```
 
-## Theme
+## History
 
-A Minima-style look (white page, system fonts, one centered column). The rotating
-hypercube on the home page is `src/components/Hypercube.tsx`. The previous beach
-design is saved at the `beach-theme` tag.
+The earlier React + Vite versions are in git history; the beach design is at the
+`beach-theme` tag.

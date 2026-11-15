@@ -1,0 +1,116 @@
+---
+# Front matter (even empty) tells Jekyll to compile this file. Overrides Minima's own main.scss.
+---
+
+@import "minima";
+
+// Keep the footer at the bottom on short pages.
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-content {
+  flex: 1;
+  padding: 19px 0 24px;
+  animation: fade-in 0.3s ease both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-content {
+    animation: none;
+  }
+}
+
+// Home: text on the left, hypercube on the right, centered between header and footer.
+.page-content:has(.hero) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > .wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $content-width;
+  }
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 320px);
+  align-items: center;
+  gap: 40px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.hypercube {
+  display: block;
+  width: min(100%, 380px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  color: #424242;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+// Footer: name + last edited on the left, tagline on the right.
+.site-footer {
+  padding: 18px 0;
+  font-size: 15px;
+  color: $grey-color;
+
+  p {
+    margin: 0;
+  }
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px 40px;
+
+  // Minima's clearfix ::after would act as a third flex item and steal the right edge.
+  &::after {
+    display: none;
+  }
+}
+
+.footer-name {
+  color: $text-color;
+}
+
+.site-footer .last-edited {
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.footer-tagline {
+  max-width: 360px;
+  font-size: 14px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .footer-row {
+    flex-direction: column;
+  }
+
+  .footer-tagline {
+    text-align: left;
+  }
+}

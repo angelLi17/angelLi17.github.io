@@ -1,0 +1,31 @@
+title: angel li
+description: EECS @ UC Berkeley. Computer vision, teaching, and things I'm building.
+url: "https://angelli17.github.io"
+baseurl: "/personalwebsite"
+timezone: America/Los_Angeles
+
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Pages shown in the header nav, in order.
+header_pages:
+  - portfolio.md
+  - blog.html
+
+# Posts live at /blog/<name>/ (e.g. _posts/2026-10-11-fa26.md -> /blog/fa26/).
+permalink: /blog/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+minima:
+  date_format: "%B %-d, %Y"
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

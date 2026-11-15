@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
 
+# GitHub's own Jekyll builder: same as "Deploy from a branch", no Node or npm.
 on:
   push:
     branches: [main]
@@ -19,15 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - run: npm ci
-      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/jekyll-build-pages@v1
       - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
 
   deploy:
     needs: build
