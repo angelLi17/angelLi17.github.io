@@ -13,6 +13,7 @@ plugins:
 header_pages:
   - portfolio.md
   - blog.html
+moon_url: "https://angelli17.github.io/website/"
 
 # Posts live at /blog/<name>/ (e.g. _posts/2026-10-11-fa26.md -> /blog/fa26/).
 permalink: /blog/:title/
